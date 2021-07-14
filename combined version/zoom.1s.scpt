@@ -23,24 +23,24 @@ if application "zoom.us" is running then
 			if exists (menu bar item "Meeting" of menu bar 1) then
 				
 				if exists (menu item MuteBtnTitle of menu 1 of menu bar item "Meeting" of menu bar 1) then
-					set muteState to "LIVE MIC"
+					set muteState to ":mic.fill:"
 				else
-					set muteState to "MUTED"
+					set muteState to ":mic.slash.fill:" 
 				end if
 				
 				if exists (menu item videoBtnTitle of menu 1 of menu bar item "Meeting" of menu bar 1) then
-					set videoState to "VIDEO ACTIVE"
-					set pad1 to "     "
+					set videoState to ":video.fill:"
+					set pad1 to "   "
 				else
-					set videoState to "NO VIDEO"
-					set pad1 to "     "
+					set videoState to ":video.slash.fill:"
+					set pad1 to "   "
 				end if
 				
 				if exists (menu item shareBtnTitle of menu 1 of menu bar item "Meeting" of menu bar 1) then
-					set shareState to ""
-					set pad2 to ""
+					set shareState to ":square.slash:"
+					set pad2 to "   "
 				else
-					set shareState to "SCREEN SHARE ACTIVE"
+					set shareState to ":square:"
 					set pad2 to "   "
 				end if
 				
@@ -63,6 +63,6 @@ else
 	set pad2 to ""
 end if
 
-return shareState & pad2 & videoState & pad1 & muteState & "| size=18
+return shareState & pad2 & videoState & pad1 & muteState & "| size=16
 ---
 Mute/Video/Screen State for Zoom"
